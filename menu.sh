@@ -31,7 +31,7 @@ while true; do
             mkdir -p "$DIR_BASE/entrada"
             mkdir -p "$DIR_BASE/salida"
             mkdir -p "$DIR_BASE/procesado"
-            echo "Entorno Creado"
+            echo "Entorno Creado."
             ;;
 
         2)
@@ -39,7 +39,7 @@ while true; do
                 bash $DIR_BASE/consolidar.sh &
                 echo "En proceso"
             else
-                echo "Error: no existe consolidar.sh"
+                echo "Error: no existe consolidar.sh."
             fi
         ;;
 
@@ -48,7 +48,7 @@ while true; do
             if [ -f "$DIR_BASE/salida/$ARCHIVO_SALIDA" ]; then 
                 sort -n $DIR_BASE/salida/$ARCHIVO_SALIDA
             else
-                echo "Error: no existe el archivo"
+                echo "Error: no existe el archivo."
             fi
             ;;
 
@@ -57,7 +57,7 @@ while true; do
             if [ -f "$DIR_BASE/salida/$ARCHIVO_SALIDA" ]; then
                 sort -k4 -n -r $DIR_BASE/salida/$ARCHIVO_SALIDA | head -10
             else
-                echo "Error: no existe un archivo con ese nombre"
+                echo "Error: no existe un archivo con ese nombre."
             fi
             ;;
 
@@ -67,7 +67,7 @@ while true; do
                 read -p "Ingrese el padron: " padron
                 grep "^$padron" "$DIR_BASE/salida/$ARCHIVO_SALIDA"
             else
-                echo "Error"
+                echo "Error, no se encontró el padrón."
             fi
             ;;
 
