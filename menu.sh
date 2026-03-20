@@ -31,12 +31,14 @@ while true; do
             mkdir -p "$DIR_BASE/entrada"
             mkdir -p "$DIR_BASE/salida"
             mkdir -p "$DIR_BASE/procesado"
+      cp "$(dirname "$0")/consolidar.sh" "$DIR_BASE/"
+    chmod +x "$DIR_BASE/consolidar.sh"
             echo "Entorno Creado."
             ;;
 
         2)
             if  [ -d "$DIR_BASE" ] && [ -f "$DIR_BASE/consolidar.sh" ]; then
-                bash $DIR_BASE/consolidar.sh &
+                bash "$DIR_BASE/consolidar.sh" &
                 echo "En proceso"
             else
                 echo "Error: no existe consolidar.sh."
